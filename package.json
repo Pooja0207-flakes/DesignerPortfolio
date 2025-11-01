@@ -10,6 +10,11 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
+  "homepage": "https://pooja0207-flakes.github.io/DesignerPortfolio",
+"scripts": {
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d dist"
+},
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
     "@radix-ui/react-accordion": "^1.2.11",
