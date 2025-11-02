@@ -24,10 +24,9 @@ const Contact = () => {
   };
 
   const socialLinks = [
-    { icon: Mail, label: "Email", value: "hello@designer.com", href: "mailto:hello@designer.com" },
-    { icon: Linkedin, label: "LinkedIn", value: "/in/designer", href: "#" },
-    { icon: Dribbble, label: "Dribbble", value: "/designer", href: "#" },
-    { icon: Github, label: "GitHub", value: "/designer", href: "#" }
+    { icon: Mail, label: "Email", value: "poojashree05501@gmail.com", href: "mailto:poojashree05501@gmail.com" },
+    { icon: Linkedin, label: "LinkedIn", value: "/in/pooja-shree-p-068993269", href: "https://linkedin.com/in/pooja-shree-p-068993269" },
+    { icon: Github, label: "GitHub", value: "/Pooja0207-flakes", href: "https://github.com/Pooja0207-flakes" }
   ];
 
   return (
@@ -55,7 +54,7 @@ const Contact = () => {
                   <Input
                     id="name"
                     type="text"
-                    placeholder="John Doe"
+                    placeholder="Your Name"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     required
@@ -70,7 +69,7 @@ const Contact = () => {
                   <Input
                     id="email"
                     type="email"
-                    placeholder="john@example.com"
+                    placeholder="Your Email Address"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     required
@@ -84,7 +83,7 @@ const Contact = () => {
                   </label>
                   <Textarea
                     id="message"
-                    placeholder="Tell me about your project..."
+                    placeholder="Your Message"
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     required
@@ -129,13 +128,6 @@ const Contact = () => {
                     </a>
                   ))}
                 </div>
-              </Card>
-
-              <Card className="p-8 bg-gradient-accent text-primary-foreground">
-                <h3 className="text-xl font-bold mb-3">Available for Freelance</h3>
-                <p className="text-primary-foreground/90">
-                  I'm currently available for freelance work and exciting collaborations. Let's build something great together!
-                </p>
               </Card>
             </div>
           </div>

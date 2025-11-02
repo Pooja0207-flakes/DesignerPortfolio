@@ -1,6 +1,12 @@
-import { ExternalLink, Eye, FileText } from "lucide-react";
+import { Github } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import ecommerceDashboard from "@/assets/ecommerce-dashboard.jpg";
+import touristWebsite from "@/assets/tourist-website.jpg";
+import eventManagement from "@/assets/event-management.jpg";
+import hospitalBooking from "@/assets/hospital-booking.jpg";
+import portfolioTemplate from "@/assets/portfolio-template.jpg";
+import todoList from "@/assets/todo-list.jpg";
 
 const Projects = () => {
   const projects = [
@@ -8,71 +14,43 @@ const Projects = () => {
       title: "E-Commerce Dashboard",
       category: "Web Application",
       description: "A comprehensive admin dashboard for managing products, orders, and analytics with real-time data visualization.",
-      image: "🛍️",
-      tags: ["UI Design", "Data Viz", "Admin Panel"],
-      links: {
-        case: "#",
-        prototype: "#",
-        live: "#"
-      }
+      image: ecommerceDashboard,
+      github: "https://github.com/Pooja0207-flakes/ecommerce-dashboard"
     },
     {
-      title: "Fitness Tracking App",
-      category: "Mobile App",
-      description: "An intuitive fitness app that helps users track workouts, nutrition, and progress with gamification elements.",
-      image: "💪",
-      tags: ["Mobile UI", "Health Tech", "UX Research"],
-      links: {
-        case: "#",
-        prototype: "#"
-      }
+      title: "Tourist Spot Website",
+      category: "Web Application",
+      description: "Discover and explore beautiful tourist destinations with an interactive booking system and detailed travel guides.",
+      image: touristWebsite,
+      github: "https://github.com/Pooja0207-flakes/tourist-spot-website"
     },
     {
-      title: "Banking Platform Redesign",
-      category: "Web & Mobile",
-      description: "Complete redesign of a banking platform focusing on accessibility, security, and seamless user experience.",
-      image: "🏦",
-      tags: ["Fintech", "Accessibility", "Multi-platform"],
-      links: {
-        case: "#",
-        prototype: "#",
-        live: "#"
-      }
+      title: "Event Management System",
+      category: "Web Application",
+      description: "Complete event planning platform with ticket booking, attendee management, and real-time event tracking.",
+      image: eventManagement,
+      github: "https://github.com/Pooja0207-flakes/event-management-system"
+    },
+    {
+      title: "Hospital Appointment Booking",
+      category: "Web Application",
+      description: "Streamlined healthcare platform for booking appointments, managing patient records, and doctor consultations.",
+      image: hospitalBooking,
+      github: "https://github.com/Pooja0207-flakes/hospital-appointment-booking"
     },
     {
       title: "Creative Portfolio Template",
-      category: "Landing Page",
-      description: "A stunning portfolio template for creatives with smooth animations and modern aesthetics.",
-      image: "🎨",
-      tags: ["Landing Page", "Animation", "Branding"],
-      links: {
-        case: "#",
-        prototype: "#",
-        live: "#"
-      }
-    },
-    {
-      title: "Task Management Tool",
       category: "Web Application",
-      description: "Collaborative task management platform with kanban boards, team chat, and productivity analytics.",
-      image: "✅",
-      tags: ["Productivity", "Collaboration", "SaaS"],
-      links: {
-        case: "#",
-        prototype: "#"
-      }
+      description: "A stunning portfolio template for creatives with smooth animations, modern aesthetics, and responsive design.",
+      image: portfolioTemplate,
+      github: "https://github.com/Pooja0207-flakes/creative-portfolio-template"
     },
     {
-      title: "Food Delivery App",
-      category: "Mobile App",
-      description: "Streamlined food ordering experience with real-time tracking, personalized recommendations, and loyalty rewards.",
-      image: "🍔",
-      tags: ["Mobile UI", "E-commerce", "User Flow"],
-      links: {
-        case: "#",
-        prototype: "#",
-        live: "#"
-      }
+      title: "Todo List",
+      category: "Web Application",
+      description: "Simple yet powerful task management application with priority levels, categories, and progress tracking.",
+      image: todoList,
+      github: "https://github.com/Pooja0207-flakes/todo-list"
     }
   ];
 
@@ -98,8 +76,12 @@ const Projects = () => {
                 className="group overflow-hidden bg-card/50 backdrop-blur border-border hover:border-primary/50 transition-all duration-500 hover:scale-105 hover:shadow-[0_0_40px_hsl(var(--primary)/0.3)] animate-fade-in cursor-pointer"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="relative aspect-video bg-secondary/50 flex items-center justify-center text-6xl overflow-hidden group-hover:scale-110 transition-transform duration-500">
-                  <span className="group-hover:scale-125 transition-transform duration-500">{project.image}</span>
+                <div className="relative aspect-video bg-secondary/50 overflow-hidden">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
                   <div className="absolute inset-0 bg-gradient-accent opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
                 </div>
 
@@ -115,35 +97,13 @@ const Projects = () => {
                     {project.description}
                   </p>
 
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag, i) => (
-                      <span
-                        key={i}
-                        className="px-3 py-1 text-xs rounded-full bg-primary/10 text-primary border border-primary/20"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div className="flex gap-2 pt-4 border-t border-border">
-                    {project.links.case && (
-                      <Button size="sm" variant="ghost" className="flex-1 group/btn">
-                        <FileText size={16} className="mr-1" />
-                        Case Study
+                  <div className="pt-4 border-t border-border">
+                    <a href={project.github} target="_blank" rel="noopener noreferrer">
+                      <Button size="sm" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground group/btn">
+                        <Github size={16} className="mr-2" />
+                        View on GitHub
                       </Button>
-                    )}
-                    {project.links.prototype && (
-                      <Button size="sm" variant="ghost" className="flex-1 group/btn">
-                        <Eye size={16} className="mr-1" />
-                        Prototype
-                      </Button>
-                    )}
-                    {project.links.live && (
-                      <Button size="sm" variant="ghost" className="group/btn">
-                        <ExternalLink size={16} />
-                      </Button>
-                    )}
+                    </a>
                   </div>
                 </div>
               </Card>

@@ -25,10 +25,6 @@ const Home = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-8">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary mb-4 animate-fade-in hover:scale-105 transition-transform duration-300">
-            <Sparkles size={16} className="animate-pulse" />
-            <span className="text-sm font-medium">Available for Freelance</span>
-          </div>
 
           <div className="space-y-4">
             <h2 className="text-2xl md:text-3xl font-medium text-muted-foreground animate-fade-in" style={{ animationDelay: "0.1s" }}>
@@ -39,13 +35,24 @@ const Home = () => {
                 Pooja Shree P
               </span>
             </h1>
-            <div className="h-16 flex items-center justify-center">
-              <p className="text-3xl md:text-4xl font-semibold text-foreground animate-fade-in" style={{ animationDelay: "0.3s" }}>
-                <span className="inline-block transition-all duration-500 ease-in-out" key={currentRole}>
-                  {roles[currentRole]}
+          <div className="h-16 flex items-center justify-center relative overflow-hidden">
+            <p className="text-3xl md:text-4xl font-semibold text-foreground animate-fade-in" style={{ animationDelay: "0.3s" }}>
+              {roles.map((role, index) => (
+                <span 
+                  key={index}
+                  className={`absolute inset-0 flex items-center justify-center transition-all duration-700 ease-in-out ${
+                    index === currentRole 
+                      ? 'opacity-100 translate-y-0' 
+                      : index < currentRole 
+                        ? 'opacity-0 -translate-y-full' 
+                        : 'opacity-0 translate-y-full'
+                  }`}
+                >
+                  {role}
                 </span>
-              </p>
-            </div>
+              ))}
+            </p>
+          </div>
           </div>
 
           <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: "0.4s" }}>

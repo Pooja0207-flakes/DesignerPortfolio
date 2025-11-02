@@ -1,9 +1,10 @@
 import { Code2, Palette, Zap, Heart } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import profileImage from "@/assets/profile-image.jpg";
 
 const About = () => {
   const tools = [
-    "Figma", "Adobe XD", "Sketch", "Framer", "Notion", "Photoshop"
+    "Figma", "Adobe XD", "Canva", "Blender", "Photoshop"
   ];
 
   const values = [
@@ -45,15 +46,17 @@ const About = () => {
 
           {/* Profile Section */}
           <div className="flex flex-col md:flex-row items-center gap-12 animate-fade-in" style={{ animationDelay: "0.1s" }}>
-            <div className="w-48 h-48 rounded-full bg-gradient-accent p-1 flex-shrink-0 hover:scale-110 hover:rotate-6 transition-all duration-500 cursor-pointer">
-              <div className="w-full h-full rounded-full bg-card flex items-center justify-center text-6xl hover:scale-110 transition-transform duration-300">
-                👨‍💻
-              </div>
+            <div className="w-48 h-48 rounded-full bg-gradient-accent p-1 flex-shrink-0 hover:scale-110 hover:rotate-6 transition-all duration-500 cursor-pointer overflow-hidden">
+              <img 
+                src={profileImage} 
+                alt="Pooja Shree P - UI/UX Designer" 
+                className="w-full h-full rounded-full object-cover hover:scale-110 transition-transform duration-300"
+              />
             </div>
             <div className="flex-1 space-y-4">
               <h2 className="text-3xl font-bold">Hello, I'm Pooja Shree P</h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                With over 5 years of experience in UI/UX design, web development, and graphic design, I specialize in creating user interfaces that are not only beautiful but also intuitive and accessible. My approach combines data-driven insights with creative vision to deliver designs that truly resonate with users.
+                I'm a passionate UI/UX designer with hands-on experience in creating intuitive, beautiful, and user-centered digital experiences. I specialize in transforming complex ideas into elegant solutions that users love.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 I believe great design is invisible—it just works. My goal is to craft experiences that feel natural, delightful, and empowering.

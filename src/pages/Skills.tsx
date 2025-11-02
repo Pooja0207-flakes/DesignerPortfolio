@@ -47,11 +47,10 @@ const Skills = () => {
 
   const tools = [
     { name: "Figma", icon: "🎨", proficiency: "Expert" },
-    { name: "Adobe XD", icon: "✨", proficiency: "Advanced" },
-    { name: "Sketch", icon: "💎", proficiency: "Advanced" },
-    { name: "Framer", icon: "⚡", proficiency: "Intermediate" },
-    { name: "Notion", icon: "📝", proficiency: "Expert" },
-    { name: "Photoshop", icon: "🖼️", proficiency: "Advanced" }
+    { name: "Adobe XD", icon: "✨", proficiency: "Intermediate" },
+    { name: "Canva", icon: "🎨", proficiency: "Expert" },
+    { name: "Blender", icon: "🎲", proficiency: "Intermediate" },
+    { name: "Photoshop", icon: "🖼️", proficiency: "Intermediate" }
   ];
 
   return (
@@ -85,14 +84,14 @@ const Skills = () => {
 
                 <div className="space-y-5">
                   {category.skills.map((skill, i) => (
-                    <div key={i} className="space-y-2">
+                    <div key={i} className="space-y-2 group/skill cursor-pointer">
                       <div className="flex justify-between items-center">
-                        <span className="font-medium">{skill.name}</span>
-                        <span className="text-sm text-muted-foreground">{skill.level}%</span>
+                        <span className="font-medium group-hover/skill:text-primary transition-colors">{skill.name}</span>
+                        <span className="text-sm text-muted-foreground group-hover/skill:text-primary transition-colors">{skill.level}%</span>
                       </div>
-                      <div className="h-2 bg-secondary rounded-full overflow-hidden">
+                      <div className="h-2 bg-secondary rounded-full overflow-hidden group-hover/skill:shadow-[0_0_10px_hsl(var(--primary)/0.5)] transition-all">
                         <div
-                          className="h-full bg-gradient-accent rounded-full transition-all duration-1000 ease-out"
+                          className="h-full bg-gradient-accent rounded-full transition-all duration-1000 ease-out group-hover/skill:scale-x-105"
                           style={{
                             width: `${skill.level}%`,
                             animationDelay: `${(index * 0.1) + (i * 0.05)}s`
